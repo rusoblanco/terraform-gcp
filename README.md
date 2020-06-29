@@ -15,7 +15,7 @@
 # Steps
 ## Create Project
 
-On the Gcloud web interface, create a project attached to the billing account provided by TCK Financial Team.
+On the Gcloud web interface, create a project attached to the billing account.
 
 It's highly recommended that the Project ID must be like a composed short name like "client-project": myproj-web, myproj-api o something like that, because that ID will be reused on each resource deployed. Be free to set the description as you need.
 
