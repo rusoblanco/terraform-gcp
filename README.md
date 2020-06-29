@@ -89,8 +89,8 @@ Now, set this backend in the providers.tf file of your Terraform project:
 terraform {
   required_version = "<0.13,>=0.12"
   backend "gcs" {
-    bucket  = "client-proj-tf"
-    prefix  = "${var.env}/tfstate"
+    bucket  = "<BUCKET_TF>"
+    prefix  = "${var.environment}/tfstate"
   }
 }
 ```
