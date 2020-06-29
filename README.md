@@ -75,7 +75,7 @@ gcloud projects add-iam-policy-binding terraform \
 
 On this step, we need a bucket to provided a storage where the tfplan would be stored to make our infrastructure persistent. So we must create one, take note that the bucket name must be unique in the whole Google cloud; here is the proposal regex name: "client-proj-tf"
 ```bash
-gsutil mb -p <GCP_PROJECT_ID> -l europe-west1 gs://"client-proj-tf"
+gsutil mb -p <GCP_PROJECT_ID> -l <REGION> gs://"client-proj-tf"
 ```
 
 Enable bucket versioning on it:
@@ -94,6 +94,10 @@ terraform {
   }
 }
 ```
+
+## Use of Pre-Commit hook
+TBD
+
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 Error: no lines in file
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
