@@ -34,11 +34,8 @@ In some ways, more APIs could be deployed via Terraform modules, but you need to
 
 ```hcl
 provider "google" {
-  version     = "3.25"
+  version     = "<4.0,>= 3.25"
   credentials = file("account.json")
-  project     = var.gcp_project
-  region      = var.region
-  zone        = var.zone
   batching    {
     enable_batching = false
     send_after      = "2m"
@@ -90,7 +87,7 @@ Now, set this backend in the providers.tf file of your Terraform project:
 
 ```hcl
 terraform {
-  required_version = "~>0.12"
+  required_version = "<0.13,>=0.12"
   backend "gcs" {
     bucket  = "client-proj-tf"
     prefix  = "${var.env}/tfstate"
