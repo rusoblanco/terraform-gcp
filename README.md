@@ -73,14 +73,14 @@ gcloud projects add-iam-policy-binding terraform \
 
 ## Create Terraform Bucket storage
 
-On this step, we need a bucket to provided a storage where the tfplan would be stored to make our infrastructure persistent. So we must create one, take note that the bucket name must be unique in the whole Google cloud; here is the proposal regex name: "client-proj-tf"
+On this step, we need a bucket to provided a storage where the tfplan would be stored to make our infrastructure persistent. So we must create one, take note that the bucket name must be unique in the whole Google cloud.
 ```bash
-gsutil mb -p <GCP_PROJECT_ID> -l <REGION> gs://"client-proj-tf"
+gsutil mb -p <GCP_PROJECT_ID> -l <REGION> gs://"<BUCKET_TF>"
 ```
 
 Enable bucket versioning on it:
 ```bash
-gsutil versioning set on gs://"client-proj-tf"
+gsutil versioning set on gs://"<BUCKET_TF>"
 ```
 
 Now, set this backend in the providers.tf file of your Terraform project:
